@@ -43,5 +43,6 @@ async function handler(request, response) {
 const app = createServer(handler)
 
 export {
-  app
+  app,
+  handler
 }
