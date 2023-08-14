@@ -5,7 +5,7 @@ import assert from 'node:assert'
 describe('API E2E test Suite', () => {
     let BASE_URL = ''
     let _server = {}
-    let _globalToken = ''
+    //let _globalToken = ''
     before(async () => {
         _server = app
         _server.listen()
@@ -31,15 +31,16 @@ describe('API E2E test Suite', () => {
                 method: 'POST',
                 body: JSON.stringify(input),
             })
-            const expected = 401
-            assert.strictEqual(
-                result.status,
-                expected,
-                `status code should be 401, actual: ${result.status}`
-            )
+             const expected = 401
+             assert.strictEqual(
+                 result.status,
+                 expected,
+                 `status code should be 401, actual: ${result.status}`
+             )
 
             const expectedBody = { error: 'user invalid!' }
             const response = await result.json()
+            console.log('result', result.status)
             assert.deepStrictEqual(response, expectedBody, `response.body should be ${JSON.stringify(expectedBody)}, actual: ${JSON.stringify(response)}`)
         })
     })

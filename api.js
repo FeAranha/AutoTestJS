@@ -44,4 +44,4 @@ const app = createServer(handler)
 if (process.env.NODE_ENV !== 'test')
   app.listen(3000, () => console.log('listening at 3000'))
 
-export { app, handler }
+export { app }
